@@ -1,0 +1,557 @@
+[
+  {
+    "_id": "1",
+    "houseModel": "Aspen",
+    "houseType": "Single-Family",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Beltline" },
+    "sqft": 2200,
+    "beds": 4,
+    "baths": 3,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/house%20model/"
+    },
+    "status": "ready",
+    "availability": "30days",
+    "oldPrice": 750000,
+    "newPrice": 720000,
+    "houseGallery": [
+      {
+        "_type": "image",
+        "url": "https://www.pexels.com/search/house%20gallery/"
+      },
+      {
+        "_type": "image",
+        "url": "https://www.pexels.com/search/house%20gallery/"
+      }
+    ],
+    "creativeTitle": "Modern Aspen Retreat",
+    "shortDescription": "Spacious single-family home with stunning city views.",
+    "keyFeatures": [
+      "Open concept design",
+      "Energy-efficient appliances",
+      "Large backyard"
+    ],
+    "floorPlans": [
+      {
+        "floor": "main",
+        "image": {
+          "_type": "image",
+          "url": "https://www.pexels.com/search/floor%20plans/"
+        }
+      },
+      {
+        "floor": "second",
+        "image": {
+          "_type": "image",
+          "url": "https://www.pexels.com/search/floor%20plans/"
+        }
+      }
+    ],
+    "slug": { "_type": "slug", "current": "aspen-beltline" }
+  },
+  {
+    "_id": "2",
+    "houseModel": "Willow",
+    "houseType": "Townhouse",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "Strathcona" },
+    "sqft": 1800,
+    "beds": 3,
+    "baths": 2,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/house%20model/"
+    },
+    "status": "pending",
+    "oldPrice": 600000,
+    "newPrice": 580000,
+    "houseGallery": [
+      {
+        "_type": "image",
+        "url": "https://www.pexels.com/search/house%20gallery/"
+      },
+      {
+        "_type": "image",
+        "url": "https://www.pexels.com/search/house%20gallery/"
+      }
+    ],
+    "creativeTitle": "Elegant Willow Townhouse",
+    "shortDescription": "Stylish townhouse in the heart of Strathcona.",
+    "keyFeatures": ["Modern kitchen", "Private patio", "Close to amenities"],
+    "floorPlans": [
+      {
+        "floor": "main",
+        "image": {
+          "_type": "image",
+          "url": "https://www.pexels.com/search/floor%20plans/"
+        }
+      },
+      {
+        "floor": "second",
+        "image": {
+          "_type": "image",
+          "url": "https://www.pexels.com/search/floor%20plans/"
+        }
+      }
+    ],
+    "slug": { "_type": "slug", "current": "willow-strathcona" }
+  },
+  {
+    "_id": "3",
+    "houseModel": "Maple",
+    "houseType": "Single-Family",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Evergreen" },
+    "sqft": 2400,
+    "beds": 4,
+    "baths": 3,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/house%20model/"
+    },
+    "status": "ready",
+    "availability": "45days",
+    "oldPrice": 800000,
+    "newPrice": 770000,
+    "houseGallery": [
+      {
+        "_type": "image",
+        "url": "https://www.pexels.com/search/house%20gallery/"
+      }
+    ],
+    "creativeTitle": "The Maple Charm",
+    "shortDescription": "Beautiful home perfect for families with school access.",
+    "keyFeatures": ["Hardwood floors", "Granite countertops", "Double garage"],
+    "floorPlans": [
+      {
+        "floor": "main",
+        "image": {
+          "_type": "image",
+          "url": "https://www.pexels.com/search/floor%20plans/"
+        }
+      }
+    ],
+    "slug": { "_type": "slug", "current": "maple-evergreen" }
+  },
+  {
+    "_id": "4",
+    "houseModel": "Cedar",
+    "houseType": "Townhouse",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "Windermere" },
+    "sqft": 1600,
+    "beds": 3,
+    "baths": 2,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/house%20model/"
+    },
+    "status": "ready",
+    "availability": "15days",
+    "oldPrice": 550000,
+    "newPrice": 540000,
+    "houseGallery": [
+      {
+        "_type": "image",
+        "url": "https://www.pexels.com/search/house%20gallery/"
+      }
+    ],
+    "creativeTitle": "Cedar Modern Townhome",
+    "shortDescription": "Affordable living in a stylish townhouse.",
+    "keyFeatures": ["Quartz kitchen", "Balcony", "Low condo fees"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "cedar-windermere" }
+  },
+  {
+    "_id": "5",
+    "houseModel": "Oakridge",
+    "houseType": "Single-Family",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Sage Hill" },
+    "sqft": 2500,
+    "beds": 5,
+    "baths": 4,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/house%20model/"
+    },
+    "status": "pending",
+    "oldPrice": 850000,
+    "newPrice": 820000,
+    "houseGallery": [],
+    "creativeTitle": "Luxury Oakridge Living",
+    "shortDescription": "Executive home in a quiet cul-de-sac.",
+    "keyFeatures": ["Walk-out basement", "Home office", "Triple garage"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "oakridge-sagehill" }
+  },
+  {
+    "_id": "6",
+    "houseModel": "Birch",
+    "houseType": "Condo",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "Downtown" },
+    "sqft": 1000,
+    "beds": 2,
+    "baths": 2,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/condo/"
+    },
+    "status": "ready",
+    "availability": "7days",
+    "oldPrice": 420000,
+    "newPrice": 410000,
+    "houseGallery": [],
+    "creativeTitle": "Downtown Birch Escape",
+    "shortDescription": "Luxury condo with skyline views.",
+    "keyFeatures": ["Underground parking", "Fitness center", "Rooftop terrace"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "birch-downtown" }
+  },
+  {
+    "_id": "7",
+    "houseModel": "Spruce",
+    "houseType": "Duplex",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Martindale" },
+    "sqft": 1700,
+    "beds": 3,
+    "baths": 3,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/home/"
+    },
+    "status": "ready",
+    "availability": "Immediate",
+    "oldPrice": 590000,
+    "newPrice": 570000,
+    "houseGallery": [],
+    "creativeTitle": "Spruce Urban Duplex",
+    "shortDescription": "Ideal starter home with side entrance.",
+    "keyFeatures": [
+      "Fully finished basement",
+      "Upgraded lighting",
+      "Close to transit"
+    ],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "spruce-martindale" }
+  },
+  {
+    "_id": "8",
+    "houseModel": "Pine",
+    "houseType": "Townhouse",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "Heritage Valley" },
+    "sqft": 1500,
+    "beds": 3,
+    "baths": 2,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/townhouse/"
+    },
+    "status": "pending",
+    "oldPrice": 500000,
+    "newPrice": 490000,
+    "houseGallery": [],
+    "creativeTitle": "Pine Heritage Hideaway",
+    "shortDescription": "Charming home near green space.",
+    "keyFeatures": [
+      "Open-concept layout",
+      "Stainless steel appliances",
+      "Fenced yard"
+    ],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "pine-heritage" }
+  },
+  {
+    "_id": "9",
+    "houseModel": "Willow",
+    "houseType": "Single-Family",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Mahogany" },
+    "sqft": 2300,
+    "beds": 4,
+    "baths": 3,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/106399/"
+    },
+    "status": "ready",
+    "availability": "60days",
+    "oldPrice": 780000,
+    "newPrice": 760000,
+    "houseGallery": [],
+    "creativeTitle": "Willow Lakeview Retreat",
+    "shortDescription": "Elegant family home near the lake.",
+    "keyFeatures": ["Lake access", "Open-concept kitchen", "Modern finishes"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "willow-mahogany" }
+  },
+  {
+    "_id": "10",
+    "houseModel": "Elm",
+    "houseType": "Condo",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "Strathcona" },
+    "sqft": 950,
+    "beds": 2,
+    "baths": 1,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/323780/"
+    },
+    "status": "ready",
+    "availability": "Immediate",
+    "oldPrice": 400000,
+    "newPrice": 390000,
+    "houseGallery": [],
+    "creativeTitle": "Elm Cozy Condo",
+    "shortDescription": "Charming downtown condo with natural light.",
+    "keyFeatures": ["High ceilings", "Laminate flooring", "Downtown view"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "elm-strathcona" }
+  },
+  {
+    "_id": "11",
+    "houseModel": "Aspen",
+    "houseType": "Duplex",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Seton" },
+    "sqft": 1800,
+    "beds": 3,
+    "baths": 3,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/1396122/"
+    },
+    "status": "pending",
+    "oldPrice": 610000,
+    "newPrice": 600000,
+    "houseGallery": [],
+    "creativeTitle": "Aspen Modern Duplex",
+    "shortDescription": "Great for families with nearby schools.",
+    "keyFeatures": ["Bonus room", "Walk-in pantry", "Luxury vinyl floors"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "aspen-seton" }
+  },
+  {
+    "_id": "12",
+    "houseModel": "Cypress",
+    "houseType": "Single-Family",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "Summerside" },
+    "sqft": 2600,
+    "beds": 5,
+    "baths": 4,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/186077/"
+    },
+    "status": "ready",
+    "availability": "30days",
+    "oldPrice": 900000,
+    "newPrice": 880000,
+    "houseGallery": [],
+    "creativeTitle": "Cypress Executive Home",
+    "shortDescription": "Large family home with luxury upgrades.",
+    "keyFeatures": ["Finished basement", "Stone fireplace", "Covered patio"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "cypress-summerside" }
+  },
+  {
+    "_id": "13",
+    "houseModel": "Hazel",
+    "houseType": "Townhouse",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Bowness" },
+    "sqft": 1400,
+    "beds": 3,
+    "baths": 2,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/106399/"
+    },
+    "status": "ready",
+    "availability": "Immediate",
+    "oldPrice": 510000,
+    "newPrice": 500000,
+    "houseGallery": [],
+    "creativeTitle": "Hazel Riverside Townhome",
+    "shortDescription": "Perfect for first-time buyers.",
+    "keyFeatures": ["Garage parking", "Pet-friendly", "Nearby shops"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "hazel-bowness" }
+  },
+  {
+    "_id": "14",
+    "houseModel": "Juniper",
+    "houseType": "Condo",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "Oliver" },
+    "sqft": 1100,
+    "beds": 2,
+    "baths": 2,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/1396132/"
+    },
+    "status": "ready",
+    "availability": "10days",
+    "oldPrice": 430000,
+    "newPrice": 420000,
+    "houseGallery": [],
+    "creativeTitle": "Juniper Downtown Condo",
+    "shortDescription": "Stylish living in the heart of Edmonton.",
+    "keyFeatures": ["Ensuite laundry", "Balcony", "Modern appliances"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "juniper-oliver" }
+  },
+  {
+    "_id": "15",
+    "houseModel": "Sequoia",
+    "houseType": "Single-Family",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Legacy" },
+    "sqft": 2750,
+    "beds": 5,
+    "baths": 4,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/1708612/"
+    },
+    "status": "pending",
+    "oldPrice": 920000,
+    "newPrice": 900000,
+    "houseGallery": [],
+    "creativeTitle": "Sequoia Dream Home",
+    "shortDescription": "Spacious home for growing families.",
+    "keyFeatures": ["Butler’s pantry", "Home office", "Upgraded cabinets"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "sequoia-legacy" }
+  },
+  {
+    "_id": "16",
+    "houseModel": "Magnolia",
+    "houseType": "Townhouse",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "Griesbach" },
+    "sqft": 1600,
+    "beds": 3,
+    "baths": 3,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/1396122/"
+    },
+    "status": "ready",
+    "availability": "Immediate",
+    "oldPrice": 530000,
+    "newPrice": 515000,
+    "houseGallery": [],
+    "creativeTitle": "Magnolia Town Classic",
+    "shortDescription": "Chic modern unit near walking trails.",
+    "keyFeatures": ["Garage", "Upgraded kitchen", "Large windows"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "magnolia-griesbach" }
+  },
+  {
+    "_id": "17",
+    "houseModel": "Linden",
+    "houseType": "Duplex",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Skyview Ranch" },
+    "sqft": 1850,
+    "beds": 3,
+    "baths": 3,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/106399/"
+    },
+    "status": "ready",
+    "availability": "25days",
+    "oldPrice": 620000,
+    "newPrice": 610000,
+    "houseGallery": [],
+    "creativeTitle": "Linden Stylish Duplex",
+    "shortDescription": "Bright home with room to grow.",
+    "keyFeatures": ["Attached garage", "Loft space", "Finished basement"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "linden-skyview" }
+  },
+  {
+    "_id": "18",
+    "houseModel": "Maplewood",
+    "houseType": "Single-Family",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "The Orchards" },
+    "sqft": 2450,
+    "beds": 4,
+    "baths": 3,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/323775/"
+    },
+    "status": "pending",
+    "oldPrice": 795000,
+    "newPrice": 775000,
+    "houseGallery": [],
+    "creativeTitle": "Maplewood Family Haven",
+    "shortDescription": "Classic family layout with luxury touches.",
+    "keyFeatures": ["Mudroom", "Smart thermostat", "Double ensuite sinks"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "maplewood-orchards" }
+  },
+  {
+    "_id": "19",
+    "houseModel": "Fir",
+    "houseType": "Condo",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "community": { "_type": "community", "_ref": "Bridgeland" },
+    "sqft": 1050,
+    "beds": 2,
+    "baths": 2,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/276583/"
+    },
+    "status": "ready",
+    "availability": "Immediate",
+    "oldPrice": 445000,
+    "newPrice": 435000,
+    "houseGallery": [],
+    "creativeTitle": "Fir Urban Condo",
+    "shortDescription": "Stylish condo with underground parking.",
+    "keyFeatures": ["Modern kitchen", "Balcony", "Great walkability"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "fir-bridgeland" }
+  },
+  {
+    "_id": "20",
+    "houseModel": "Redwood",
+    "houseType": "Single-Family",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "community": { "_type": "community", "_ref": "Westmount" },
+    "sqft": 2800,
+    "beds": 5,
+    "baths": 4,
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/photo/276554/"
+    },
+    "status": "ready",
+    "availability": "14days",
+    "oldPrice": 950000,
+    "newPrice": 930000,
+    "houseGallery": [],
+    "creativeTitle": "Redwood Luxe Estate",
+    "shortDescription": "Executive family home in premium location.",
+    "keyFeatures": ["Wine cellar", "Vaulted ceilings", "Chef’s kitchen"],
+    "floorPlans": [],
+    "slug": { "_type": "slug", "current": "redwood-westmount" }
+  }
+]
+
+
+

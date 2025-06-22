@@ -1,0 +1,15 @@
+[
+  {
+    "_type": "city",
+    "name": "Calgary"
+  },
+  {
+    "_type": "city",
+    "name": "Edmonton"
+  },
+  {
+    "_type": "city",
+    "name": "Red Deer"
+  }
+]
+

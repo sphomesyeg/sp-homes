@@ -1,0 +1,102 @@
+[
+  {
+    "_type": "community",
+    "name": "Beltline",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "description": "A vibrant urban community in downtown Calgary known for its nightlife and cultural scene.",
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/Calgary/"
+    },
+    "slug": { "_type": "slug", "current": "beltline" }
+  },
+  {
+    "_type": "community",
+    "name": "Bridgeland",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "description": "A historic neighborhood with a mix of modern and traditional architecture, known for its Italian heritage.",
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/Calgary/"
+    },
+    "slug": { "_type": "slug", "current": "bridgeland" }
+  },
+  {
+    "_type": "community",
+    "name": "West Springs",
+    "city": { "_type": "city", "_ref": "Calgary" },
+    "description": "A suburban community with excellent schools and parks, ideal for families.",
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/Calgary/"
+    },
+    "slug": { "_type": "slug", "current": "west-springs" }
+  },
+  {
+    "_type": "community",
+    "name": "Strathcona",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "description": "A lively area with historic buildings, trendy cafes, and a strong arts scene.",
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/edmonton%20alberta%20communities/"
+    },
+    "slug": { "_type": "slug", "current": "strathcona" }
+  },
+  {
+    "_type": "community",
+    "name": "Windermere",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "description": "A modern, upscale neighborhood with luxury homes and shopping centers.",
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/edmonton%20alberta%20communities/"
+    },
+    "slug": { "_type": "slug", "current": "windermere" }
+  },
+  {
+    "_type": "community",
+    "name": "Oliver",
+    "city": { "_type": "city", "_ref": "Edmonton" },
+    "description": "One of Edmonton’s oldest neighborhoods, offering a mix of historic charm and urban convenience.",
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/edmonton%20alberta%20communities/"
+    },
+    "slug": { "_type": "slug", "current": "oliver" }
+  },
+  {
+    "_type": "community",
+    "name": "Westlake",
+    "city": { "_type": "city", "_ref": "Red Deer" },
+    "description": "A peaceful residential area near Red Deer College, ideal for students and families.",
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/red%20deer/"
+    },
+    "slug": { "_type": "slug", "current": "westlake" }
+  },
+  {
+    "_type": "community",
+    "name": "Clearview Ridge",
+    "city": { "_type": "city", "_ref": "Red Deer" },
+    "description": "A newer development with modern homes and easy access to nature trails.",
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/red%20deer/"
+    },
+    "slug": { "_type": "slug", "current": "clearview-ridge" }
+  },
+  {
+    "_type": "community",
+    "name": "Sunnybrook",
+    "city": { "_type": "city", "_ref": "Red Deer" },
+    "description": "A well-established neighborhood with mature trees and a strong sense of community.",
+    "featuredImage": {
+      "_type": "image",
+      "url": "https://www.pexels.com/search/red%20deer/"
+    },
+    "slug": { "_type": "slug", "current": "sunnybrook" }
+  }
+]
+
