@@ -10,6 +10,7 @@ import Loader from "@/components/loader/Loader";
 import { client } from "@/sanity/client";
 import { QuickPossession } from "@/types/propsInterfaces";
 import { useCity } from "../../../context/cityContext";
+import { FaArrowRight } from "react-icons/fa";
 
 const QuickPossessions = () => {
   const { city } = useCity();
@@ -59,7 +60,7 @@ const QuickPossessions = () => {
         setData(data);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         console.error("Error fetching quick possessions:", error);
         setData([]);
         setLoading(false);
@@ -102,82 +103,98 @@ const QuickPossessions = () => {
         {loading ? (
           <Loader />
         ) : data.length > 0 ? (
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {data.map((item) => (
               <li
                 key={item._id}
-                className="bg-blue-100 dark:bg-gray-800 shadow-md rounded-lg overflow-hidden"
+                className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                {/* Image */}
-                <div className="relative w-full h-52 sm:h-64">
+                {/* Image Container */}
+                <div className="relative w-full aspect-[4/3]">
                   <Image
-                    src={item.featuredImage || ""}
+                    src={item.featuredImage || "/images/placeholder-home.jpg"}
                     alt={item.houseModel}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+
+                  {/* Status Badge */}
                   <div
-                    className={`absolute top-3 left-3 px-3 py-1 text-xs rounded-full text-white ${
+                    className={`absolute top-4 left-4 px-3 py-1.5 text-xs font-bold text-white rounded-full shadow-md ${
                       colorStatus[item.status as keyof typeof colorStatus]
                     }`}
                   >
                     {item.status === "ready" && item.availability
-                      ? `READY IN 1–${item.availability} DAYS`
+                      ? `READY IN ${item.availability} DAYS`
                       : item.status.toUpperCase()}
                   </div>
                 </div>
 
-                {/* Info */}
-                <div className="p-4 relative space-y-1">
-                  <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
-                    {item.houseModel}
-                  </h2>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">
-                    {item.community.name} • {item.houseType.toUpperCase()}
-                  </p>
-                  <div className="flex items-center gap-4 mt-2 text-gray-700 dark:text-gray-200 text-sm">
-                    <span className="flex items-center gap-1">
-                      <FaRulerCombined className="text-gray-500" />
-                      {item.sqft} sqft
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <FaBed className="text-gray-500" />
-                      {item.beds}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <FaBath className="text-gray-500" />
-                      {item.baths}
-                    </span>
+                {/* Content */}
+                <div className="p-5 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h2 className="text-xl uppercase font-bold text-gray-800 dark:text-white">
+                        {item.houseModel}
+                      </h2>
+                      <p className="text-lg text-gray-500 dark:text-gray-400">
+                        {item.community.name}
+                      </p>
+                    </div>
+
+                    {/* Price Tag */}
+                    {(item.status === "ready" || item.status === "pending") && (
+                      <div className="top-4 right-4 bg-white dark:bg-gray-700 shadow-md rounded-md px-2 py-2 text-right">
+                        {item.oldPrice && item.oldPrice > item.newPrice && (
+                          <div className="text-xs text-red-500 line-through font-medium">
+                            ${item.oldPrice.toLocaleString()}
+                          </div>
+                        )}
+                        <div className="text-green-700 dark:text-green-400 text-base font-bold">
+                          ${item.newPrice.toLocaleString()}
+                        </div>
+                        {item.oldPrice && item.oldPrice > item.newPrice && (
+                          <div className="text-xs text-yellow-600 font-medium">
+                            Save ${item.oldPrice - item.newPrice}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
 
-                  {/* Price Tag */}
-                  {(item.status === "ready" || item.status === "pending") && (
-                    <div className="absolute top-4 right-4 bg-white dark:bg-gray-700 shadow-md rounded-md px-2 py-2 text-right">
-                      {item.oldPrice && item.oldPrice > item.newPrice && (
-                        <div className="text-xs text-red-500 line-through font-medium">
-                          ${item.oldPrice.toLocaleString()}
-                        </div>
-                      )}
-                      <div className="text-green-700 dark:text-green-400 text-base font-bold">
-                        ${item.newPrice.toLocaleString()}
-                      </div>
-                      {item.oldPrice && item.oldPrice > item.newPrice && (
-                        <div className="text-xs text-yellow-600 font-medium">
-                          Save ${item.oldPrice - item.newPrice}
-                        </div>
-                      )}
+                  {/* Features */}
+                  <div className="flex items-center gap-4 py-2 border-t border-b border-gray-100 dark:border-gray-700">
+                    <div className="flex items-center gap-1 text-gray-600 dark:text-gray-300">
+                      <FaBed className="text-gray-400" />
+                      <span>{item.beds} Beds</span>
                     </div>
-                  )}
-                </div>
+                    <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300">
+                      <FaBath className="text-gray-400" />
+                      <span>{item.baths} Baths</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300">
+                      <FaRulerCombined className="text-gray-400" />
+                      <span>{item.sqft.toLocaleString()} sqft</span>
+                    </div>
+                  </div>
 
-                {/* Link */}
-                <div className="bg-yellow-600 py-3 text-center">
-                  <Link
-                    href={`/quick-possessions/${item.slug}`}
-                    className="text-white font-semibold text-sm"
-                  >
-                    View This Home →
-                  </Link>
+                  {/* Type & Status */}
+                  <div className="flex justify-between items-center">
+                    <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-semibold rounded-full">
+                      {item.houseType.toUpperCase()}
+                    </span>
+
+                    <Link
+                      href={`/quick-possessions/${item.slug}`}
+                      className="flex items-center gap-1  font-medium text-yellow-600 hover:text-yellow-700 transition-colors"
+                    >
+                      View Details <FaArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
               </li>
             ))}
