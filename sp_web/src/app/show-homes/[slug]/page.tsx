@@ -1,10 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { client } from "@/sanity/client";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
-import { client } from "@/sanity/client";
 
 interface ShowHome {
   _id: string;
@@ -23,65 +21,68 @@ interface ShowHome {
   slug: string;
 }
 
-const ShowHomeSingle = ({ params }: { params: { slug: string } }) => {
-  const { slug } = params;
-  const [home, setHome] = useState<ShowHome | null>(null);
-  const [loading, setLoading] = useState(true);
+type Params = { params: Promise<{ slug: string }> };
 
-  useEffect(() => {
-    if (!slug) return;
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { slug } = await params;
+  const home = await client.fetch<ShowHome | null>(
+    `*[_type == "showHome" && slug.current == $slug][0]{
+      houseModel,
+      houseType,
+      "community": community->{ name },
+      "featuredImage": featuredImage.asset->url
+    }`,
+    { slug}
+  );
 
-    client
-      .fetch(
-        `*[_type == "showHome" && slug.current == $slug][0]{
-          _id,
-          houseModel,
-          houseType,
-          streetAddress,
-          "community": community->{ name },
-          province,
-          propertySize,
-          numOfBeds,
-          numOfBaths,
-          videoTour,
-          "featuredImage": featuredImage.asset->url,
-          "slug": slug.current
-        }`,
-        { slug }
-      )
-      .then((data: ShowHome) => {
-        setHome(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching show home:", error);
-        setHome(null);
-        setLoading(false);
-      });
-  }, [slug]);
-
-  const getEmbedUrl = (url: string): string | null => {
-    try {
-      const parsed = new URL(url);
-      if (parsed.hostname === "youtu.be") {
-        return `https://www.youtube.com/embed/${parsed.pathname.slice(1)}`;
-      }
-      const videoId = parsed.searchParams.get("v");
-      return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
-    } catch {
-      return null;
-    }
-  };
-
-  const embedUrl = home?.videoTour ? getEmbedUrl(home.videoTour) : null;
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <p className="text-gray-500 dark:text-gray-300">Loading...</p>
-      </div>
-    );
+  if (!home) {
+    return {
+      title: "Show Home Not Found",
+    };
   }
+
+  return {
+    title: `${home.houseModel} | ${home.community.name}`,
+    description: `Explore the ${home.houseModel} (${home.houseType}) located in ${home.community.name}.`,
+    openGraph: {
+      images: [home.featuredImage],
+    },
+  };
+}
+
+function getEmbedUrl(videoUrl: string): string | null {
+  try {
+    const url = new URL(videoUrl);
+    if (url.hostname === "youtu.be") {
+      return `https://www.youtube.com/embed/${url.pathname.slice(1)}`;
+    }
+    const videoId = url.searchParams.get("v");
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+  } catch {
+    return null;
+  }
+}
+
+export default async function ShowHomeSingle({ params }: Params) {
+  const { slug } = await params;
+
+  const home = await client.fetch<ShowHome | null>(
+    `*[_type == "showHome" && slug.current == $slug][0]{
+      _id,
+      houseModel,
+      houseType,
+      streetAddress,
+      "community": community->{ name },
+      province,
+      propertySize,
+      numOfBeds,
+      numOfBaths,
+      videoTour,
+      "featuredImage": featuredImage.asset->url,
+      "slug": slug.current
+    }`,
+    { slug }
+  );
 
   if (!home) {
     return (
@@ -94,11 +95,12 @@ const ShowHomeSingle = ({ params }: { params: { slug: string } }) => {
     );
   }
 
+  const embedUrl = getEmbedUrl(home.videoTour);
+
   return (
     <div className="w-full">
-      {/* Hero Image */}
+      {/* Hero Image & Info */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-        {/* Back Link */}
         <div className="mb-6">
           <Link
             href="/show-homes"
@@ -108,9 +110,7 @@ const ShowHomeSingle = ({ params }: { params: { slug: string } }) => {
           </Link>
         </div>
 
-        {/* Grid Layout: Image + Info */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Featured Image */}
           <div className="relative w-full h-[300px] sm:h-[450px] lg:h-[500px] rounded-xl overflow-hidden shadow-lg ring-1 ring-black/10">
             <Image
               src={home.featuredImage}
@@ -121,7 +121,6 @@ const ShowHomeSingle = ({ params }: { params: { slug: string } }) => {
             />
           </div>
 
-          {/* Details */}
           <div className="bg-white dark:bg-gray-900 p-6 sm:p-10 rounded-xl shadow-lg space-y-6">
             <div className="space-y-2">
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">
@@ -175,6 +174,4 @@ const ShowHomeSingle = ({ params }: { params: { slug: string } }) => {
       )}
     </div>
   );
-};
-
-export default ShowHomeSingle;
+}
