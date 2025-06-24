@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 interface NavigationProps {
@@ -7,27 +7,31 @@ interface NavigationProps {
   setActive: (value: string) => void;
 }
 
-
-
 export const NavigationContext = createContext<NavigationProps>({
   active: "/",
   setActive: () => {},
 });
 
-export const NavigationProvider = ({ children }: { children: React.ReactNode }) => {
-  const path = usePathname();
-  console.log("NavigationProvider path:", path);
+export const NavigationProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  const pathname = usePathname();
+  const [active, setActive] = useState(pathname || "/");
 
-  const [active, setActive] = useState(path || "/");
+  useEffect(() => {
+    if (pathname !== active) {
+      setActive(pathname);
+    }
+  }, [pathname, active]);
 
   return (
     <NavigationContext.Provider value={{ active, setActive }}>
       {children}
     </NavigationContext.Provider>
-  )
-    
+  );
 };
-
 
 export const useNavigation = () => {
   const context = useContext(NavigationContext);
