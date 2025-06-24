@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
 import { client } from "@/sanity/client";
 
@@ -24,8 +23,8 @@ interface ShowHome {
   slug: string;
 }
 
-const ShowHomeSingle = () => {
-  const { slug } = useParams();
+const ShowHomeSingle = ({ params }: { params: { slug: string } }) => {
+  const { slug } = params;
   const [home, setHome] = useState<ShowHome | null>(null);
   const [loading, setLoading] = useState(true);
 

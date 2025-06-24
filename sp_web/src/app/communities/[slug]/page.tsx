@@ -13,18 +13,12 @@ interface Community {
   };
 }
 
-type Props = {
+export default async function CommunityPage({
+  params,
+}: {
   params: { slug: string };
-};
-
-export async function generateMetadata({ params }: Props) {
-  return {
-    title: `Community: ${params.slug}`,
-  };
-}
-
-export default async function CommunityPage({ params }: Props) {
-  const slug = params.slug;
+}) {
+  const { slug } = params;
 
   const data = await client.fetch<Community | null>(
     `*[_type == "community" && slug.current == $slug][0]{
