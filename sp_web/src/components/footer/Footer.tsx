@@ -16,7 +16,7 @@ import { client } from "@/sanity/client";
 
 // Image paths
 const spAlignedText = "/images/sp-aligned-text.png";
-const omikTagline = "/images/omik-tagline.png";
+const omikLogo = "/images/omik-logo.png";
 
 interface Community {
   _id: string;
@@ -48,7 +48,7 @@ const Footer = () => {
     client
       .fetch(query, params)
       .then((data: Community[]) => setData(data))
-      .catch((error) => {
+      .catch((error: unknown) => {
         console.error("Error fetching communities:", error);
         setData([]);
       });
@@ -68,8 +68,8 @@ const Footer = () => {
             className="object-contain w-auto max-h-[100px]"
           />
           <Image
-            src={omikTagline}
-            alt="Omik tagline logo"
+            src={omikLogo}
+            alt="Omik logo"
             width={256}
             height={80}
             className="object-contain w-auto max-h-[100px]"
@@ -139,7 +139,7 @@ const Footer = () => {
                 href="mailto:sphomesedm@gmail.com"
                 className="hover:text-yellow-300"
               >
-                sphomesedm@gmail.com
+                info@sphomesyeg.ca
               </Link>
             </li>
             <li className="flex items-center gap-2">
@@ -157,7 +157,7 @@ const Footer = () => {
         <ul className="socials flex gap-6 items-center justify-center">
           {(
             [
-              ["https://facebook.com/", FaFacebook],
+              ["https://www.facebook.com/sphomeyeg", FaFacebook],
               ["https://www.instagram.com/sp.homes.yeg/", FaInstagram],
               ["https://youtube.com/", FaYoutube],
             ] as [string, React.ElementType][]
