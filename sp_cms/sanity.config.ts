@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'sp_cms',
 
-  projectId: '52bi5eh6',
+  projectId: 'fixs5xtu',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],

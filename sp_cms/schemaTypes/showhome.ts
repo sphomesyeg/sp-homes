@@ -91,7 +91,7 @@ export const showHome = defineType({
       name: 'videoTour',
       title: 'Video Tour',
       type: 'text',
-      description: 'Paste the YouTube embed code here.',
+      description: 'Paste the YouTube url here.',
     }),
     defineField({
       name: 'featuredImage',
