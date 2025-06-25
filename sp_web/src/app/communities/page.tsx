@@ -7,6 +7,7 @@ import { client } from "@/sanity/client";
 import { Community } from "@/types/propsInterfaces";
 import { useCity } from "../../../context/cityContext";
 import Loader from "@/components/loader/Loader";
+import { ImArrowRight } from "react-icons/im";
 
 const Communities = () => {
   const background = "/images/sp-communities.jpg";
@@ -104,7 +105,9 @@ const Communities = () => {
                   href={`/communities/${item.slug}`}
                   className="inline-block w-full py-3 text-base font-bold text-white hover:underline"
                 >
-                  Explore Community →
+                  <div className="link_text  flex items-center gap-2 justify-center">
+                    <span>Explore Community</span> <ImArrowRight />
+                  </div>
                 </Link>
               </div>
             </li>
