@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { ImArrowRight } from "react-icons/im";
 
 export default function Home() {
   const spInterior = "/videos/sp-interior.mp4";
@@ -44,23 +45,22 @@ export default function Home() {
       </div>
       {/* Emotional Tagline */}
       <div className="emotional_tagline flex flex-col items-center justify-center py-12 px-4 bg-white/80 rounded-lg shadow-md mt-8 mx-auto max-w-3xl">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500 mb-4 tracking-wide text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-500 mb-4 tracking-wide text-center">
           YOUR HOME, YOUR STORY
         </h2>
         <p className="text-gray-700 text-base sm:text-lg md:text-xl font-light text-center leading-relaxed">
           More than walls and a roof — a home is where your life unfolds.
           It&apos;s where laughter echoes, dreams grow, and memories are made.
-          At <span className="font-semibold ">SP Home</span>, we
-          don&apos;t just build houses — we shape the spaces that shape you.
-          Explore homes designed not just for living, but for belonging.
-          Let&apos;s create the place you&apos;ll call yours — in every sense of
-          the word.
+          At <span className="font-semibold ">SP Home</span>, we don&apos;t just
+          build houses — we shape the spaces that shape you. Explore homes
+          designed not just for living, but for belonging. Let&apos;s create the
+          place you&apos;ll call yours — in every sense of the word.
         </p>
       </div>
 
       {/* Explore Your Dream Home */}
       <div className="explore-container py-10 px-6 bg-gray-100">
-        <h2 className="text-3xl font-bold text-center mb-6 text-yellow-500">
+        <h2 className="text-3xl font-bold text-center mb-6 text-amber-500">
           Explore Your Dream Home
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -108,7 +108,9 @@ export default function Home() {
                   {item}
                 </span>
                 <Link href={link}>
-                  <span className="text-xl font-bold">View 🠮</span>
+                  <span className="text-xl font-bold flex items-center gap-2 hover:text-amber-200">
+                    <span>View</span> <ImArrowRight />
+                  </span>
                 </Link>
               </div>
             </motion.div>
