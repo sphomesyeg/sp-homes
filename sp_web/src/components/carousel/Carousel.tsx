@@ -29,7 +29,7 @@ export default function Carousel({ images }: ImageCarouselProps) {
       {/* Left Arrow */}
       <button
         onClick={() => scroll("left")}
-        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-md hover:bg-gray-100"
+        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white dark:bg-black p-3 shadow-md hover:bg-gray-100"
       >
         <FaChevronLeft />
       </button>
@@ -59,7 +59,7 @@ export default function Carousel({ images }: ImageCarouselProps) {
       {/* Right Arrow */}
       <button
         onClick={() => scroll("right")}
-        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-md hover:bg-gray-100"
+        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white dark:bg-black p-3 shadow-md hover:bg-gray-100"
       >
         <FaChevronRight />
       </button>

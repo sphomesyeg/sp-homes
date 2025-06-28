@@ -95,7 +95,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact_wrapper">
+    <div className="contact_wrapper bg-white dark:bg-gray-800 pb-12">
       {/* Contact Hero */}
       <div
         className="relative w-full object-cover h-[240px] md:h-[480px] lg:h-[520px]"
@@ -142,29 +142,29 @@ const Contact = () => {
               href={info.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center bg-gray-100 border border-gray-200 rounded-xl p-6 gap-4 hover:shadow-lg transition-all duration-300 hover:border-yellow-400"
+              className="group flex flex-col items-center bg-gray-100 dark:bg-gray-600 border border-gray-200 rounded-xl p-6 gap-4 hover:shadow-lg transition-all duration-300 hover:border-yellow-400"
             >
-              <div className="p-4 bg-gray-100 rounded-full group-hover:bg-yellow-50 transition-colors duration-300">
+              <div className="p-4 bg-gray-100 dark:bg-gray-300 rounded-full group-hover:bg-yellow-50 transition-colors duration-300">
                 <info.icon
                   size={48}
                   className="text-gray-600 group-hover:text-yellow-500 transition-colors duration-300"
                 />
               </div>
-              <h4 className="text-xl font-semibold text-gray-800">
+              <h4 className="text-xl font-semibold text-gray-800 dark:text-white">
                 {info.title}
               </h4>
-              <p className="text-gray-600 text-center">{info.value}</p>
+              <p className="text-gray-600 dark:text-white text-center">{info.value}</p>
             </Link>
           ))}
         </div>
       </div>
 
       {/* Contact Form */}
-      <div className="contact_sp_home mx-4 md:mx-auto max-w-4xl bg-gray-900 px-6 py-10 md:px-10 md:py-12 mb-12 rounded-xl shadow-xl">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+      <div className="contact_sp_home mx-4 md:mx-auto max-w-4xl bg-gray-200 dark:bg-gray-600 px-6 py-10 md:px-10 md:py-12 rounded-xl shadow-xl">
+        <h2 className="text-2xl md:text-3xl font-bold dark:text-white mb-2">
           Have Any Questions?
         </h2>
-        <p className="text-gray-300 mb-8">
+        <p className="dark:text-gray-300 mb-8">
           Fill out the form below and we&#39;ll get back to you soon
         </p>
 
@@ -204,7 +204,7 @@ const Contact = () => {
             <div key={name} className="flex flex-col items-start w-full">
               <label
                 htmlFor={name}
-                className="block text-sm font-medium text-gray-300 mb-1"
+                className="block text-sm font-medium dark:text-gray-300 mb-1"
               >
                 {label}
               </label>
@@ -214,7 +214,7 @@ const Contact = () => {
                 name={name}
                 value={formData[name as keyof FormData]}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-700 bg-gray-400 dark:bg-gray-800 text-black dark:text-white rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
                 placeholder={placeholder}
               />
               {errors[name as keyof FormData] && (
@@ -229,7 +229,7 @@ const Contact = () => {
           <div className="flex flex-col items-start w-full">
             <label
               htmlFor="contactPreferences"
-              className="block text-sm font-medium text-gray-300 mb-1"
+              className="block text-sm font-medium dark:text-gray-300 mb-1"
             >
               Preferred Contact Method
             </label>
@@ -238,7 +238,7 @@ const Contact = () => {
               name="contactPreferences"
               value={formData.contactPreferences}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-gray-700 bg-gray-400 dark:bg-gray-800 text-black/50 dark:text-white rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
             >
               <option value="">How should we contact you?</option>
               <option value="email">Email</option>
@@ -256,7 +256,7 @@ const Contact = () => {
           <div className="flex flex-col items-start w-full">
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-300 mb-1"
+              className="block text-sm font-medium dark:text-gray-300 mb-1"
             >
               Your Message
             </label>
@@ -266,7 +266,7 @@ const Contact = () => {
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-gray-700 bg-gray-400 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
               placeholder="Tell us about your inquiry..."
             ></textarea>
             {errors.message && (

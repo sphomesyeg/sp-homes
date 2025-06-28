@@ -19,7 +19,7 @@ export default function Home() {
           loop
           muted
           autoPlay
-          poster="/images/video-placeholder.jpg"
+          poster="/images/video-placeholder.png"
         >
           <source src={spInterior} type="video/mp4" />
           Your browser does not support the video tag.
@@ -44,11 +44,11 @@ export default function Home() {
         </div>
       </div>
       {/* Emotional Tagline */}
-      <div className="emotional_tagline flex flex-col items-center justify-center py-12 px-4 bg-white/80 rounded-lg shadow-md mt-8 mx-auto max-w-3xl">
+      <div className="emotional_tagline flex flex-col items-center justify-center py-12 px-4 bg-white/90 dark:bg-gray-700 rounded-lg shadow-md my-8 mx-auto max-w-3xl">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-500 mb-4 tracking-wide text-center">
           YOUR HOME, YOUR STORY
         </h2>
-        <p className="text-gray-700 text-base sm:text-lg md:text-xl font-light text-center leading-relaxed">
+        <p className="text-gray-700 dark:text-white text-base sm:text-lg md:text-xl font-light text-center leading-relaxed">
           More than walls and a roof — a home is where your life unfolds.
           It&apos;s where laughter echoes, dreams grow, and memories are made.
           At <span className="font-semibold ">SP Home</span>, we don&apos;t just
@@ -59,7 +59,7 @@ export default function Home() {
       </div>
 
       {/* Explore Your Dream Home */}
-      <div className="explore-container py-10 px-6 bg-gray-100">
+      <div className="explore-container py-10 px-6 bg-gray-100 dark:bg-gray-800">
         <h2 className="text-3xl font-bold text-center mb-6 text-amber-500">
           Explore Your Dream Home
         </h2>

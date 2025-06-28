@@ -104,9 +104,9 @@ export default async function QuickPossessionPage({ params }: Params) {
   
 
   return (
-    <div className="text-gray-900">
+    <div className="text-gray-900 ">
       {/* Hero */}
-      <section className="bg-gray-50">
+      <section className="bg-gray-50 dark:text-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-14">
           <Link
             href="/quick-possessions"
@@ -115,7 +115,7 @@ export default async function QuickPossessionPage({ params }: Params) {
             🠔 Back to Quick Possessions
           </Link>
 
-          <div className="bg-white shadow-xl rounded-xl overflow-hidden border">
+          <div className="bg-white dark:bg-gray-600 shadow-xl rounded-xl overflow-hidden border">
             <div className="relative w-full aspect-[16/9]">
               <Image
                 src={possession.featuredImage}
@@ -129,33 +129,33 @@ export default async function QuickPossessionPage({ params }: Params) {
             <div className="p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900">
+                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                     {possession.houseModel}
                   </h1>
-                  <p className="text-yellow-600 font-bold uppercase text-sm mt-1">
+                  <p className="text-yellow-600 dark:text-yellow-400 font-bold uppercase text-sm mt-1">
                     In {possession.community?.name}
                   </p>
                 </div>
                 <div className="mt-4 sm:mt-0">
                   {possession.status === "sold" && (
-                    <span className="text-red-600 font-semibold text-xs">
+                    <span className="text-red-600 dark:text-red-500 font-semibold text-xs">
                       🔴 Sold
                     </span>
                   )}
                   {possession.status === "ready" && (
-                    <span className="text-green-700 font-semibold text-xs">
+                    <span className="text-green-700 dark:text-green-400 font-semibold text-xs">
                       🟢 Ready
                     </span>
                   )}
                   {possession.status === "pending" && (
-                    <span className="text-yellow-800 font-semibold text-xs">
+                    <span className="text-yellow-800 dark:text-yellow-500 font-semibold text-xs">
                       🟡 Pending
                     </span>
                   )}
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6 text-sm text-gray-800">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6 text-sm text-gray-800 dark:text-gray-200">
                 <div>
                   🏠 <strong>Type:</strong> {possession.houseType}
                 </div>
@@ -176,11 +176,11 @@ export default async function QuickPossessionPage({ params }: Params) {
               </div>
 
               <div className="flex flex-wrap items-center gap-4 mt-6">
-                <span className="text-2xl font-bold text-green-700">
+                <span className="text-2xl font-bold text-green-700 dark:text-green-400">
                   ${possession.newPrice.toLocaleString()}
                 </span>
                 {possession.oldPrice && (
-                  <span className="line-through text-gray-500">
+                  <span className="line-through text-gray-500 dark:text-gray-300">
                     ${possession.oldPrice.toLocaleString()}
                   </span>
                 )}
@@ -199,7 +199,7 @@ export default async function QuickPossessionPage({ params }: Params) {
       {/* Gallery */}
       {Array.isArray(possession.houseGallery) &&
         possession.houseGallery.length > 0 && (
-          <section className="py-14 bg-white">
+          <section className="py-14 bg-white dark:bg-gray-900 dark:text-white">
             <div className="max-w-6xl mx-auto px-6">
               <h2 className="text-2xl font-semibold mb-6">Gallery</h2>
               <Carousel images={possession.houseGallery} />
@@ -208,21 +208,21 @@ export default async function QuickPossessionPage({ params }: Params) {
         )}
 
       {/* Description + Features */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800 dark:text-gray-200">
         <div className="max-w-7xl mx-auto px-6 md:flex md:gap-16 items-start">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h3 className="text-2xl font-semibold mb-4">
               Find your perfect fit in{" "}
               <span className="text-yellow-600">{possession.houseModel}</span>
             </h3>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
               {possession.shortDescription}
             </p>
           </div>
 
           <div className="md:w-1/2">
             <h3 className="text-xl font-semibold mb-4">Key Features</h3>
-            <ul className="grid sm:grid-cols-2 gap-3 text-gray-800 list-disc list-inside">
+            <ul className="grid sm:grid-cols-2 gap-3 text-gray-800 dark:text-gray-200 list-disc list-inside">
               {possession.keyFeatures?.map((feature: string, i: number) => (
                 <li key={i} className="text-sm">
                   {feature}
@@ -236,7 +236,7 @@ export default async function QuickPossessionPage({ params }: Params) {
       {/* Floor Plans */}
       {Array.isArray(possession.floorPlans) &&
         possession.floorPlans.length > 0 && (
-          <section className="py-16 bg-white">
+          <section className="py-16 bg-white dark:bg-sky-950 dark:text-gray-200">
             <div className="max-w-6xl mx-auto px-6">
               <h2 className="text-2xl font-semibold mb-8">
                 Explore the Floor Plans
@@ -244,7 +244,7 @@ export default async function QuickPossessionPage({ params }: Params) {
               <div className="grid md:grid-cols-2 gap-10">
                 {possession.floorPlans.map((floor: FloorPlan, i: number) => (
                   <div key={i}>
-                    <h3 className="text-lg font-medium mb-2 text-gray-700">
+                    <h3 className="text-lg font-medium mb-2 text-gray-700 dark:text-gray-200">
                       {floor.floor}
                     </h3>
                     <div className="rounded-xl overflow-hidden shadow border border-gray-200">
@@ -264,7 +264,7 @@ export default async function QuickPossessionPage({ params }: Params) {
         )}
 
       {/* CTA */}
-      <div className="bg-yellow-600 py-10 mt-20 text-center">
+      <div className="bg-yellow-600 py-10 text-center">
         <h2 className="text-white text-2xl font-bold mb-3">
           Like What You See?
         </h2>

@@ -75,11 +75,11 @@ const Communities = () => {
           <Loader />
         </div>
       ) : data.length > 0 ? (
-        <ul className="p-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-30 bg-white">
+        <ul className="p-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-30 bg-white dark:bg-gray-800">
           {data.map((item) => (
             <li
               key={item._id}
-              className="relative h-72 bg-gray-900 rounded-lg overflow-hidden shadow-md group"
+              className="relative h-72 bg-gray-900 dark:bg-gray-600 rounded-lg overflow-hidden shadow-md group"
             >
               <Image
                 src={item.featuredImage}

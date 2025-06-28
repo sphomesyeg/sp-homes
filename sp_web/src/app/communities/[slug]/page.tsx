@@ -56,7 +56,7 @@ export default async function CommunityPage({ params }: Params) {
   if (!community) return notFound();
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10">
+    <div className="max-w-5xl mx-auto px-4 py-10 dark:bg-gray-800 mt-4 mb-12">
       <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
         <Image
           src={community.featuredImage}

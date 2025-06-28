@@ -50,7 +50,7 @@ export default async function Gallery() {
   const gallery = await client.fetch(query);
   const images: GalleryImage[] = gallery?.images ?? [];
   return (
-    <div>
+    <div className="bg-white dark:bg-gray-800">
       {/* Banner Section */}
       <div
         className="gallery_wrapper relative w-full object-cover h-[240px] md:h-[480px] lg:h-[520px]"
@@ -72,11 +72,11 @@ export default async function Gallery() {
       </div>
 
       {/* Title and short description */}
-      <div className="max-w-4xl mx-auto px-4 py-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">
+      <div className="max-w-4xl mx-auto px-4 py-8 text-center bg-gray-200/80 dark:bg-black my-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">
           Modern Design Gallery
         </h2>
-        <p className="font-semibold md:text-lg text-gray-600">
+        <p className="font-semibold md:text-lg text-gray-600 dark:text-gray-300">
           Explore our stunning portfolio of premium SP Homes properties. Browse
           through high-quality images of our luxury homes, modern designs, and
           exceptional craftsmanship that define SP Homes living.
