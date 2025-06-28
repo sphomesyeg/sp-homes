@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navigation">
-      <div className="bg-gray-900 py-3 px-4 md:px-8 fixed top-0 left-0 w-full z-[10000] font-sans shadow-[5px_10px_30px_rgba(0,0,0,0.3)] drop-shadow-lg border-b border-gray-600">
+      <div className="max-w-[1480px] bg-gray-900 py-3 px-4 md:px-8 fixed top-0 left-1/2 transform -translate-x-1/2 w-full z-[10000] font-sans shadow-[5px_10px_30px_rgba(0,0,0,0.3)] drop-shadow-lg border-b border-gray-600">
         <div className="flex items-center justify-between mx-auto">
           {/* Logo & City Selector */}
           <div className="flex items-center gap-3">
@@ -119,7 +119,8 @@ const Navbar: React.FC = () => {
               <button
                 onClick={() => handleLinkClick(link.href)}
                 className={`w-full text-left text-gray-100 hover:text-yellow-300 transition-colors py-3 px-1 cursor-pointer ${
-                    isActive(link.href) ? "text-yellow-300" : ""}`}
+                  isActive(link.href) ? "text-yellow-300" : ""
+                }`}
               >
                 {link.label}
               </button>
